@@ -9,11 +9,11 @@
 <p> {{ title }} </p> 
 <span> Accediendo a la propiedad counter del archivo .ts </span>
 <p> Conuter: {{ counter }} </p> 
-<hr>
-<h1>Contador</h1>
-<p> Conuter: {{ counter }} </p> 
 <!-- () para acceder a los eventos del boton
 En este caso se usa el evento (click)="funcion()" -->
 <button (click)="increaseBy( +1 )"> +1 </button>
 <button (click)="resetCounter()"> Reset </button>
 <button (click)="increaseBy( -1 )" > -1  </button>
+<hr>
+<!-- componente independiente Counter -->
+ <app-counter></app-counter>

@@ -10,20 +10,18 @@ export class AppComponent {    //Propiedades de la clase
   public title: string = '01-bases-angular';   
   public counter: number = 10;
 
-
-  //Metodo para incrementar el contador
-  increaseByy(): void {
-    this.counter = this.counter + 1;  //Forma corta [this.counter += 1]
-  }
-
-  //Metodo para icrementar, decrementar el contador segun el argumento
-  increaseBy( value: number ): void {
-    this.counter += value;
-  }
-
-  //Metodo para resetear el contador
-  resetCounter(): void {
-    this.counter = 10;
-  }
-
+    //Metodo para incrementar el contador
+    increaseByy(): void {
+      this.counter = this.counter + 1;  //Forma corta [this.counter += 1]
+    }
+  
+    //Metodo para icrementar, decrementar el contador segun el argumento
+    increaseBy( value: number ): void {
+      this.counter += value;
+    }
+  
+    //Metodo para resetear el contador
+    resetCounter(): void {
+      this.counter = 10;
+    }
 }
