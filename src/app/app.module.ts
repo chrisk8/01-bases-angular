@@ -3,20 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { counterComponent } from './counter/counter.component';
-import { CharacterComponent } from './characters/character/character.component';
+
+
 import { ListComponent } from './characters/list/list.component';
+import { CounterModule } from './counter/counter.module';
+import { CharactersModule } from './characters/characters.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    counterComponent,
-    CharacterComponent,
-    ListComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    CharactersModule,
+    CounterModule                    //Los modulos siempre van en los imports del modulo principal
   ],
   providers: [],
   bootstrap: [AppComponent]
