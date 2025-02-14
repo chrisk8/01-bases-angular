@@ -1,0 +1,50 @@
+<p>
+    Se usara la Directiva *ngFor para llenar una lista desordenada de heroes de un arreglo. <br>
+    Se puede colocar cada elemento de la lista por separado, con la directiva ngFor, cada elemento de la lista se
+    llenara conforme se barre el array list de forma automatica.
+</p>
+<hr>
+<!-- Con la directiva ngIf-else se pueden mostrar y ocultar elementos del html al cumplir una condicion
+La etiqueta ng-template simula un div con una referencia local que se puede referenciar en caso de no cumplir la condicion. En este
+caso se usa para ocultar el mensaje "Campeon borrado XXX" ya que aun no se presiona el boton y muestra el mensaje "No se ha borrado nada"
+
+Este modulo hace lo siguiente
+    Al mostrar la lista, se vera el mensaje "No se ha borrado nada" y el mensaje "Campeon borrado XXXX" no debe mostrarse.
+    Al hacer click en el boton "Eliminar campeon" se elimina el ultimo elemento en la lista
+    El mensaje "No se ha borrado nada" desaparece y se muesta Campeon borrado [n]
+    Cuando ya no hay elementos para eliminar, el boton desaparece. 
+    
+Condicion del ngIf-else
+    Si hay un elemento eliminado muestra el div con el mensaje "Campeon borrado [name]"
+    Caso contrario, se hace referencia al id del ng-template para que lo muestra   
+    
+Condicion ngIf del boton
+    Si el tamaño de la lista es mayor a 0 el boton se muestra.
+-->
+
+
+<div class="mt-5"  *ngIf="deletedChar;else notDeleted">
+    <h3> Campeon borrado <small class="text-danger"> {{ deletedChar }} </small> </h3>
+</div>
+<div class="container mt-3">
+    <h3>Lista de personajes</h3>
+    <ul *ngFor="let item of list" class="list-group">
+        <li class="list-group-item"> {{ item }} </li>
+    </ul>
+</div>
+<button 
+    *ngIf="list.length > 0"
+    (click)="removeLast()"
+    class="btn btn-outline-danger mt-3" 
+
+> 
+    Eliminar campeon 
+</button>
+
+<ng-template #notDeleted>
+    <h3> No se ha borrado nada </h3>
+</ng-template>
+
+
+
+
