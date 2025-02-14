@@ -1,0 +1,40 @@
+<h1> Componente Personaje </h1>
+
+<h2>Nombre del personaje: {{ nameChar }}</h2>
+<hr>
+<dl>
+    <td>Nombre: </td>
+    <dd>{{ nameChar }}</dd>
+    <td>Skin: </td>
+    <dd>{{skinName}}</dd>
+    <td>Skill: </td>
+    <dd> {{ getSkillName() }} </dd>
+    <td>Nombre Capitalizado: </td>
+    <dd>{{ capitalizedName }}</dd>
+</dl>
+
+<!-- 
+Se usa la directiva *ngIf para ocultar el boton cuando cambia el nombre o la skill 
+muestra el boton si la propiedad nameChar y skill tienen su valor actual
+Al hacer click en el boton se destruye ya que cambio el valor de la propiedad
+-->
+<button 
+    (click)="changeCharacter()" 
+    class="btn btn-info mx-2" 
+    *ngIf=" nameChar !== 'Jinx' "  
+>
+    Cambiar personaje 
+</button>
+<button
+    (click)="resetValues()"
+    class="btn btn-primary mx-2"
+>
+    Reset Values
+</button>
+<button 
+    (click)="changeSkill()"
+    class="btn btn-warning" 
+    *ngIf=" skill !== '!ZAP!' " 
+> 
+    Cambiar skill 
+</button>
